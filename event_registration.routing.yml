@@ -1,0 +1,43 @@
+# Admin: Global Settings
+event_registration.settings_form:
+  path: '/admin/config/event-registration/settings'
+  defaults:
+    _form: '\Drupal\event_registration\Form\ModuleSettingsForm'
+    _title: 'Event Registration Settings'
+  requirements:
+    _permission: 'administer event registration'
+
+# Admin: Add Event
+event_registration.config_form:
+  path: '/admin/config/event-registration/add-event'
+  defaults:
+    _form: '\Drupal\event_registration\Form\EventConfigForm'
+    _title: 'Add New Event'
+  requirements:
+    _permission: 'administer event registration'
+
+# Admin: Listing Page (The Controller wraps the Filter Form)
+event_registration.admin_list:
+  path: '/admin/content/event-registrations'
+  defaults:
+    _controller: '\Drupal\event_registration\Controller\AdminListingController::content'
+    _title: 'Event Registrations'
+  requirements:
+    _permission: 'administer event registration'
+
+# Admin: Export CSV
+event_registration.export_csv:
+  path: '/admin/content/event-registrations/export'
+  defaults:
+    _controller: '\Drupal\event_registration\Controller\AdminListingController::exportCsv'
+  requirements:
+    _permission: 'administer event registration'
+
+# Public: Registration Form
+event_registration.public_form:
+  path: '/events/register'
+  defaults:
+    _form: '\Drupal\event_registration\Form\RegistrationForm'
+    _title: 'Register for Event'
+  requirements:
+    _access: 'TRUE'
