@@ -1,0 +1,6 @@
+name: 'Event Registration'
+type: module
+description: 'Allows users to register for events via custom forms with email notifications.'
+package: Custom
+core_version_requirement: ^10
+configure: event_registration.settings_form
